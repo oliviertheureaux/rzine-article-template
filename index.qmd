@@ -9,7 +9,7 @@ Les normes éditoriales des articles méthodologiques Rzines sont consultables [
 
 ## Template Quarto
 
-Un modèle de mise Quarto[^1] est [mis à disposition sur GitHub](https://github.com/rzine-reviews/rzine-article-template).
+Un modèle de mise en page Quarto[^1] est [mis à disposition sur GitHub](https://github.com/rzine-reviews/rzine-article-template).
 
 Pour le récupérer en ligne de commande :
 
@@ -18,13 +18,13 @@ Pour le récupérer en ligne de commande :
 quarto use template rzine-reviews/rzine-article-template
 ```
 
-Cela créé un répertoire sur votre machine contenant un fichier Quarto `index.qmd`, prêt à être complété.
+Cela crée un répertoire sur votre machine contenant un fichier Quarto `index.qmd`, prêt à être complété.
 
 [^1]: [https://quarto.org](https://quarto.org)
 
 ## Métadonnées
 
-Il n'y a pas d'en-tête (YAML) dans le fichier source de l'article (`index.qmd`). Les métadonnées générales de l'article sont à complétées dans le fichier `_quarto.yml` situé à la racine du répertoire. Renseignez-y le titre, sous-titre, auteur, affiliations, résumé, mots-clefs... 
+Il n'y a pas d'en-tête (YAML) dans le fichier source de l'article (`index.qmd`). Les métadonnées générales de l'article sont à complétées dans le fichier `_quarto.yml` situé à la racine du répertoire. Renseignez-y le titre, sous-titre, auteur, affiliations, résumé, mots-clés... 
 
 
 ## Documentation
@@ -49,7 +49,7 @@ knitr::include_graphics("figures/logo.png") # lien vers le fichier image
 
 ```{r, echo=T}
 #| tbl-align: center
-#| tbl-cap: Tableau 1
+#| tbl-cap: "Tableau 1"
 #| tbl-cap-location: top
 knitr::kable(head(iris))
 ```
@@ -67,25 +67,25 @@ Quelques exemples :
 # Affiche le code
 #| echo: true
 
-# Affiche les warnings
+# Affiche les avertissements
 #| warning: true
 
 # Identifiant du chunk
 #| label: fig-1
 
-# Titre de l'image
+# Titre de la figure
 #| fig-cap: Un exemple d'image
 
-# Alignement de l'image dans la page
+# Alignement de la figure dans la page
 #| fig-align: left, right, center
 
-# Dimension verticale d'une figure
+# Hauteur de la figure
 #| fig-height: 3
 
-# Dimension horizontale d'une figure
+# Largeur de la figure
 #| fig-width: 7
 
-# Dimension horizontale d'une image
+# Dimension d'affichage de l'image
 #| out.width: 300px
 ```
 
@@ -97,8 +97,8 @@ Vous pouvez également utiliser les lignes de commande suivantes :
 
 
 ```bash
-quarto render document.qmd --to html
-quarto render document.qmd --to pdf
+quarto render index.qmd --to rzine-html
+quarto render index.qmd --to rzine-pdf
 ```
 
 
@@ -112,7 +112,7 @@ Retrouvez le processus de soumission sur [cette page](https://rzine.fr/documenta
 ## Données
 
 Tout·e lecteur·ice doit être en mesure de reproduire la démonstration de l’article sans contrainte de réutilisation. 
-L’intégralité des données utilisées doivent obligatoirement être :
+L’intégralité des données utilisées doit obligatoirement être :
 
 * Correctement présentées dans l’article
 * Libre d’utilisation et de diffusion
@@ -120,7 +120,7 @@ L’intégralité des données utilisées doivent obligatoirement être :
 * Décrites par des métadonnées (`readme.txt`)
 * Respectueuses du règlement général sur la protection des données
 
-**Toutes les données utilisées dans l’article devront être stockées dans le répertoire data.**
+**Toutes les données utilisées dans l’article devront être stockées dans le répertoire `data/`.**
 
 
 
@@ -128,7 +128,7 @@ L’intégralité des données utilisées doivent obligatoirement être :
 
 Une bibliographie est attendue (`references.bib`). Elle sert à positionner votre contribution dans le champ thématique et/ou disciplinaire. 
 
-Pour appeler une référence dans le corps du document, utilisez le symbol `@`. Par exemple : @CameronTrivedi2013
+Pour appeler une référence dans le corps du document, utilisez le symbole `@`. Par exemple : @CameronTrivedi2013
 
 La liste de références bibliographiques citées sera automatiquement ajoutée en fin de document :
 

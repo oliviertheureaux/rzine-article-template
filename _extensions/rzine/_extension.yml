@@ -14,9 +14,9 @@ contributes:
       bibliography: references.bib  
       csl: universite-de-montreal-apa.csl
       license: "CC BY-SA"
-      css: styles.css
       date-format: long
-      highlight-style: github
+      # highlight-style: github
+      syntax-highlighting: github
       shortcodes:
         # You can include here Lua filters defining shortcodes from your extension
         - shortcodes.lua
@@ -26,32 +26,49 @@ contributes:
         issn: 2743-8791
 
     pdf:
+      pdf-engine: lualatex
       papersize: a4
-      geometry: 
-        - a4paper
-        - textheight=24cm
-        - textwidth=15.5cm
+      geometry:
+        - top=25mm
+        - bottom=25mm
+        - left=25mm
+        - right=25mm
       fontsize: 11pt
-      fontfamily: montserrat
-      monofont: montserrat
+      linestretch: 1.08 # contrôle l'interligne
+      
+      # fontfamily: montserrat
+      # monofont: montserrat
+      mainfont: "Arial"
+      sansfont: "Arial"
+      monofont: "DejaVu Sans Mono"
       monofontoptions:
         - Scale=0.92
+      
+      colorlinks: true
+      linkcolor: MidnightBlue
+      citecolor: MidnightBlue
+      urlcolor: MidnightBlue
+      toccolor: MidnightBlue
+      
       lof: true
-      lof-title: "liste des figures"
+      lof-title: "Liste des figures"
       lot: true
+      
       include-in-header:
         - "partials/pdf/include-in-header.tex"
+        
       template-partials:
         - "partials/pdf/before-body.tex"
+        
       format-resources:
-        - logo.png
-        - cc-by.png
+        - "logo.png"
+        - "cc-by.png"
         
     html:
       title-block-banner: "#0c3762"
       title-block-banner-color: "#C4D6EE"
-      tbl-cap-location: margin
-      cap-location: margin
+      tbl-cap-location: top
+      cap-location: top
       template-partials:
           - "partials/html/title-block.html"
           - "partials/html/title-metadata.html"
@@ -62,6 +79,7 @@ contributes:
       code-summary: "Cacher/Montrer le code"
       code-fold: false
       link-external-newwindow: true
+      css: styles.css
       crossref:
         sec-prefix: Section
         eq-prefix: Equation
