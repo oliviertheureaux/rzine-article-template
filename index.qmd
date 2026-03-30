@@ -124,7 +124,18 @@ L’intégralité des données utilisées doit obligatoirement être :
 
 **Toutes les données utilisées dans l’article devront être stockées dans le répertoire `data/`.**
 
+## Note de bas de page
 
+N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
+
+[^2]: [https://quarto.org/docs/authoring/markdown-basics.html#footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes)
+
+
+## Informations de session
+
+```{r session_info, echo=FALSE}
+sessionInfo()
+```
 
 ## Références bibliographiques
 
@@ -142,20 +153,5 @@ La liste de références bibliographiques citées sera automatiquement ajoutée 
 :::
 
 
-# Annexes {.unnumbered}
 
-
-## Note de bas de page
-
-N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
-
-[^2]: [https://quarto.org/docs/authoring/markdown-basics.html#footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes)
-
-
-\newpage
-##### Informations de session {.unnumbered}
-
-```{r session_info, echo=FALSE}
-sessionInfo()
-```
 
