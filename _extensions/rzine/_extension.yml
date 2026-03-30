@@ -38,7 +38,7 @@ contributes:
       
       # fontfamily: montserrat
       # monofont: montserrat
-      mainfont: "TeX Gyre Termes"  # police principale
+      mainfont: "Arial"  # police principale
       sansfont: "Arial"  # police sans-serif pour LaTex/Quarto
       monofont: "DejaVu Sans Mono" # police pour les chunks
       monofontoptions:
@@ -50,9 +50,10 @@ contributes:
       urlcolor: MidnightBlue
       toccolor: MidnightBlue
       
-      lof: true
+      lof: false # liste des figures
       lof-title: "Liste des figures"
-      lot: true
+      lot: false # liste des tables
+      lot-title: "Liste des tableaux"
       
       include-in-header:
         - "partials/pdf/include-in-header.tex"
