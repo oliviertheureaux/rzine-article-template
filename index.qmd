@@ -1,4 +1,6 @@
 
+
+\newpage
 # Normes éditoriales
 
 Les normes éditoriales des articles méthodologiques Rzines sont consultables [ici](https://rzine.fr/documentation/normes/).
@@ -150,7 +152,7 @@ N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
 [^2]: [https://quarto.org/docs/authoring/markdown-basics.html#footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes)
 
 
-
+\newpage
 ##### Informations de session {.unnumbered}
 
 ```{r session_info, echo=FALSE}

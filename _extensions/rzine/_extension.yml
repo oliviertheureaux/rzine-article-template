@@ -16,7 +16,7 @@ contributes:
       license: "CC BY-SA"
       date-format: long
       # highlight-style: github
-      syntax-highlighting: github
+      syntax-highlighting: github  # nouvelle syntaxe
       shortcodes:
         # You can include here Lua filters defining shortcodes from your extension
         - shortcodes.lua
@@ -26,9 +26,9 @@ contributes:
         issn: 2743-8791
 
     pdf:
-      pdf-engine: lualatex
+      pdf-engine: lualatex   # fixe le moteur LaTeX (ici basé sur Lua)
       papersize: a4
-      geometry:
+      geometry: # contrôle les marges
         - top=25mm
         - bottom=25mm
         - left=25mm
@@ -38,13 +38,13 @@ contributes:
       
       # fontfamily: montserrat
       # monofont: montserrat
-      mainfont: "Arial"
-      sansfont: "Arial"
-      monofont: "DejaVu Sans Mono"
+      mainfont: "TeX Gyre Termes"  # police principale
+      sansfont: "Arial"  # police sans-serif pour LaTex/Quarto
+      monofont: "DejaVu Sans Mono" # police pour les chunks
       monofontoptions:
-        - Scale=0.92
+        - Scale=0.92  # réduit la taille des police des chunks
       
-      colorlinks: true
+      colorlinks: true  # couleur des liens
       linkcolor: MidnightBlue
       citecolor: MidnightBlue
       urlcolor: MidnightBlue

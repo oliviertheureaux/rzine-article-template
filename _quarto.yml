@@ -3,8 +3,8 @@ project:
   render: 
     - index.qmd
 
-title: "Rzine mis en application avec R Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R"
-subtitle: "Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R"
+title: "Rzine mis en application avec R"
+subtitle: "Articles méthodologiques mis en application avec R"
 date: today
 # date-modified: last-modified
 
