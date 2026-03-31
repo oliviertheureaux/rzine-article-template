@@ -4,6 +4,7 @@ project:
     - index.qmd
     
 lang: fr-FR 
+language: _language.yml
 
 title: "Rzine mis en application avec R"
 subtitle: "Articles méthodologiques mis en application avec R"
@@ -24,14 +25,23 @@ author:
       - name: "Etablissement 2"
         url: "https://xxxxx.fr"
     orcid: 0000-0000-0000-0000
+  
+  - name: "Auteur·rice 3"
+    url: "https://rzine.fr"
+    affiliations:
+      - name: "Etablissement 3"
+        url: "https://xxxxx.fr"
+    orcid: 0000-0000-0000-0000
     
 keywords: 
   - Rzine
   - template
   - Quarto
-  - méthode
+  - méthodes
   - R
   - reproductbilité
+  - outils
+  - géomatique
 
 
 abstract: |

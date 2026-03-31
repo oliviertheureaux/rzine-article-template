@@ -99,8 +99,8 @@ Vous pouvez également utiliser les lignes de commande suivantes :
 
 
 ```bash
-quarto render index.qmd --to rzine-html
-quarto render index.qmd --to rzine-pdf
+quarto render index.qmd --to rzine-html  # générer le HTML
+quarto render index.qmd --to rzine-pdf   # générer le PDF
 ```
 
 

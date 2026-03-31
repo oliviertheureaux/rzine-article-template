@@ -8,7 +8,8 @@
 
 <meta name="author" content="Auteur·rice 1">
 <meta name="author" content="Auteur·rice 2">
-<meta name="keywords" content="Rzine, template, Quarto, méthode, R, reproductbilité">
+<meta name="author" content="Auteur·rice 3">
+<meta name="keywords" content="Rzine, template, Quarto, méthodes, R, reproductbilité, outils, géomatique">
 
 <title>Rzine mis en application avec R</title>
 <style>
@@ -2236,7 +2237,7 @@ background: #0c3762;
 <meta name="quarto:status" content="draft">
 
 
-<style type="text/css">.rzine-review{font-size:90%;margin-top:30px;}.quarto-title-banner .title{margin-top:5px;}.quarto-title-banner .subtitle{font-size:120%;}.quarto-title-banner a{color:#8192a3;}a{color:#4178BC;}h1{color:#4178BC;}h2{color:#4178BC;}h3{color:#4178BC;}h4{color:#4178BC;}h5{color:#4178BC;}h6{color:#4178BC;}.rzine-title-row {display: flex;align-items: center;gap: 1rem; flex-wrap: wrap;}.rzine-logo {height: 100px;width: auto;display: block;}.rzine-title-text {flex: 1; min-width: 250px;}.rzine-title-text .title {margin: 0;}.rzine-title-text .subtitle {margin-top: 0.5rem; margin-bottom: 0;}</style>
+<style type="text/css">.rzine-review{font-size:90%;margin-top:30px;}.quarto-title-banner .title{margin-top:5px;}.quarto-title-banner .subtitle{font-size:120%;}.quarto-title-banner a{color:#8192a3;}a{color:#4178BC;}h1{color:#4178BC;}h2{color:#4178BC;}h3{color:#4178BC;}h4{color:#4178BC;}h5{color:#4178BC;}h6{color:#4178BC;}.rzine-title-row { display: flex; align-items: center;gap: 1rem; flex-wrap: wrap; }.rzine-logo {height: 100px;width: auto;display: block;}.rzine-title-text {flex: 1; min-width: 250px;}.rzine-title-text .title {margin: 0;}.rzine-title-text .subtitle {margin-top: 0.5rem; margin-bottom: 0;}</style>
 </head>
 
 <body class="quarto-light"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Brouillon</div>
@@ -2296,6 +2297,17 @@ background: #0c3762;
                   </a>
                 </p>
             </div>
+            <div class="quarto-title-meta-contents">
+        <a href="https://rzine.fr">Auteur·rice 3</a> <a href="https://orcid.org/0000-0000-0000-0000" class="quarto-title-author-orcid"> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+      </div>
+          
+          <div class="quarto-title-meta-contents">
+              <p class="affiliation">
+                  <a href="https://xxxxx.fr">
+                  Etablissement 3
+                  </a>
+                </p>
+            </div>
         </div>
                     
   <div class="quarto-title-meta">
@@ -2314,7 +2326,7 @@ background: #0c3762;
       <div>
       <div class="quarto-title-meta-heading">Mots-clés</div> <!-- traduction de KEYWORDS -->
       <div class="quarto-title-meta-contents">
-        <p class="date">Rzine, template, Quarto, méthode, R, reproductbilité</p>
+        <p class="date">Rzine, template, Quarto, méthodes, R, reproductbilité, outils, géomatique</p>
       </div>
     </div>
     
@@ -2371,7 +2383,7 @@ background: #0c3762;
   </ul></li>
   <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie">Bibliographie</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (rzine)</a></li></ul></div><div class="quarto-other-links"><h2>Autres liens</h2><ul><li><a href="https://github.com/rzine-reviews/rzine-article-template"><i class="bi bi-github"></i>Code source</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Téléchargements</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (rzine)</a></li></ul></div><div class="quarto-other-links"><h2>Autres liens</h2><ul><li><a href="https://github.com/rzine-reviews/rzine-article-template"><i class="bi bi-github"></i>Code source</a></li></ul></div></nav>
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -2518,8 +2530,8 @@ background: #0c3762;
 <h1 data-number="3"><span class="header-section-number">3</span> Compiler l’article</h1>
 <p>Dans l’IDE RStudio, cliquez sur le bouton <strong>Render</strong> ou utilisez le raccourci suivant : <code>Ctrl + Maj + K</code></p>
 <p>Vous pouvez également utiliser les lignes de commande suivantes :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render index.qmd <span class="at">--to</span> rzine-html</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render index.qmd <span class="at">--to</span> rzine-pdf</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render index.qmd <span class="at">--to</span> rzine-html  <span class="co"># générer le HTML</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render index.qmd <span class="at">--to</span> rzine-pdf   <span class="co"># générer le PDF</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="soumettre-un-article" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Soumettre un article</h1>
@@ -2593,7 +2605,7 @@ Cameron, A. C. et Trivedi, P. K. (2013). <em>Regression Analysis of Count Data</
 <li id="fn2"><p><a href="https://quarto.org/docs/authoring/markdown-basics.html#footnotes">https://quarto.org/docs/authoring/markdown-basics.html#footnotes</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Réutilisation</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr_fr">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{12026,
-  author = {1, Auteur·rice and 2, Auteur·rice},
+  author = {1, Auteur·rice and 2, Auteur·rice and 3, Auteur·rice},
   title = {Rzine mis en application avec R},
   journal = {Rzine},
   date = {2026-03-31},
@@ -2606,8 +2618,8 @@ Cameron, A. C. et Trivedi, P. K. (2013). <em>Regression Analysis of Count Data</
     {[}https://rzine.fr{]}(https://rzine.fr).}
 }
 </code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Veuillez citer ce travail comme suit :</div><div id="ref-12026" class="csl-entry quarto-appendix-citeas" role="listitem">
-1, A. et 2, A. (2026). Rzine mis en application avec R. <em>Rzine</em>.
-<a href="https://doi.org/10.xxxx/xxx-xxx">https://doi.org/10.xxxx/xxx-xxx</a>
+1, A., 2, A. et 3, A. (2026). Rzine mis en application avec R.
+<em>Rzine</em>. <a href="https://doi.org/10.xxxx/xxx-xxx">https://doi.org/10.xxxx/xxx-xxx</a>
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
