@@ -53,6 +53,12 @@ published: false
 citation:
   doi: "10.xxxx/xxx-xxx"
 
+
+# format-links:
+#   - format: rzine-pdf
+#     text: Télécharger le PDF
+#     icon: file-pdf
+    
 other-links:
   - text: Code source
     icon: github
@@ -66,6 +72,8 @@ format:
     toc: true
     toc-location: right
     toc-expand: 2
+    format-links: true
+
   rzine-pdf: default
 
 
