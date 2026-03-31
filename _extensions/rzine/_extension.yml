@@ -2,13 +2,16 @@ title: Template article Rzine
 author: Rzine CoreTeam
 version: 0.1.0
 quarto-required: ">=1.5.0"
+
+
+
 contributes:
   formats:
     common:
       toc: true
       number-sections: true
       anchor-sections: true
-      toc-title: Table des matières
+      toc-title: Sommaire   # table des matières à la fin d'un document
       code-copy: true
       code-block-background: true
       bibliography: references.bib  
@@ -50,16 +53,22 @@ contributes:
       urlcolor: MidnightBlue
       toccolor: MidnightBlue
       
+      code-block-bg: "#F2F2F2"        # couleur de fond pour les chunks
+      code-block-border-left: false   # supprime des comportements quand contenu dans la marge  
+      # https://quarto.org/docs/authoring/article-layout.html?   Dans PDF/ code blocks
+      
       lof: false # liste des figures
       lof-title: "Liste des figures"
       lot: false # liste des tables
       lot-title: "Liste des tableaux"
       
+
       include-in-header:
         - "partials/pdf/include-in-header.tex"
         
       template-partials:
         - "partials/pdf/before-body.tex"
+
         
       format-resources:
         - "logo.png"

@@ -2,6 +2,8 @@ project:
   title: "rzine-template"
   render: 
     - index.qmd
+    
+lang: fr-FR 
 
 title: "Rzine mis en application avec R"
 subtitle: "Articles méthodologiques mis en application avec R"
@@ -27,9 +29,10 @@ keywords:
   - Rzine
   - template
   - Quarto
-  - method
+  - méthode
   - R
-  - reproducibility
+  - reproductbilité
+
 
 abstract: |
      Modèle de mise en page Quarto pour la revue Rzine, qui permet de publier sur des méthodes de SHS, mises en application avec R. Plus d'informations sur [https://rzine.fr](https://rzine.fr).
@@ -45,7 +48,6 @@ other-links:
     icon: github
     href: "https://github.com/rzine-reviews/rzine-article-template"
 
-lang: fr-FR 
 repo: "template"
 
 embed-resources: true
@@ -54,10 +56,7 @@ format:
     toc: true
     toc-location: right
     toc-expand: 2
-  rzine-pdf:
-    mainfont: "Arial"
-    sansfont: "Arial"
-    monofont: "DejaVu Sans Mono"
+  rzine-pdf: default
 
 
 
