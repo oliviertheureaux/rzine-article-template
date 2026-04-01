@@ -7,7 +7,7 @@ lang: fr-FR
 language: _language.yml
 
 title: "Rzine mis en application avec R"
-subtitle: "Articles méthodologiques mis en application avec R"
+subtitle: "Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R"
 date: today
 # date-modified: last-modified
 
@@ -42,23 +42,17 @@ keywords:
   - reproductbilité
   - outils
   - géomatique
+  - base de données
 
 
 abstract: |
      Modèle de mise en page Quarto pour la revue Rzine, qui permet de publier sur des méthodes de SHS, mises en application avec R. Plus d'informations sur [https://rzine.fr](https://rzine.fr).
 
-draft: true # set to false once the build is running
-published: false
+draft: true # sur HTML : bandeau ; sur PDF : “soumis” en biais
+published: false # utile ?
 
-citation:
-  doi: "10.xxxx/xxx-xxx"
+doi: "10.xxxx/xxx-xxx"
 
-
-# format-links:
-#   - format: rzine-pdf
-#     text: Télécharger le PDF
-#     icon: file-pdf
-    
 other-links:
   - text: Code source
     icon: github

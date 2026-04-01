@@ -1,0 +1,8 @@
+\clearpage
+
+$if(citation)$
+\section*{Veuillez citer ce travail comme suit}
+
+$for(by-author)$$by-author.name.literal$$sep$, $endfor$ ($date$). \textit{$title$}. Rzine.
+$if(doi)$\url{https://doi.org/$doi$}$endif$
+$endif$

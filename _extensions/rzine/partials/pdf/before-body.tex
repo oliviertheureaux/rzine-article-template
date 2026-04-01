@@ -38,24 +38,32 @@
     $endfor$
 
   \bigskip
-  
-  Date de publication: $date$
-\end{center}
-      
-\bigskip
-\begin{abstract}
-$abstract$
-\end{abstract}
 
-$if(keywords)$
-\noindent%
-{\it Mots-clés :} $for(keywords)$$it$$sep$, $endfor$ % traduction de KEYWORDS
-\vfill
+Date de publication : $date$
+\bigskip
+$if(doi)$
+\\
+DOI : \href{https://doi.org/$doi$}{$doi$}
 $endif$
+\end{center}
+
+\medskip
+
+
+
+
+\noindent\textbf{Résumé}\par
+$abstract$
+
+
+\noindent\textbf{Mots-clés}\par
+$for(keywords)$$it$$sep$, $endfor$ % traduction de KEYWORDS
+\vfill
+
 
 $if(draft)$
 % \linenumbers
-\DraftwatermarkOptions{stamp=true, colorspec=0.9, text={\rm submitted}}
+\DraftwatermarkOptions{stamp=true, colorspec=0.9, text={\rm soumis}}
 $else$
 \DraftwatermarkOptions{stamp=false}
 $endif$
