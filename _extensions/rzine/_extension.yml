@@ -39,8 +39,8 @@ contributes:
       
       # fontfamily: montserrat
       # monofont: montserrat
-      mainfont: "Arial"  # police principale
-      sansfont: "Arial"  # police sans-serif pour LaTex/Quarto
+      mainfont: "Futura"  # police principale
+      sansfont: "Futura"  # police sans-serif pour LaTex/Quarto
       monofont: "DejaVu Sans Mono" # police pour les chunks
       monofontoptions:
         - Scale=0.92  # réduit la taille des police des chunks
