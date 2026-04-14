@@ -1,7 +1,7 @@
 ---
 editor: 
   markdown: 
-    wrap: 72
+    wrap: 72 # retour à la ligne dans le .qmd après 80 caractères
 ---
 
 \newpage
@@ -47,18 +47,21 @@ article](https://rzine.fr/documentation/redaction/)
 ### Inclure une image
 
 ```{r, echo=T}
+#| label: fig-logo-rzine
+#| fig-cap: "Logo Rzine"
 #| fig-align: center
-#| fig-cap: "Image 1 : logo Rzine"
-#| out.width: 300px
-
+#| out.width: 200px
 knitr::include_graphics("figures/logo.png") # lien vers le fichier image
 ```
+
+Sur la version du logo @fig-logo-rzine, nous distinguons une pile de livres... 
+
 
 ### Insérer un tableau
 
 ```{r, echo=T}
-#| tbl-align: center
 #| tbl-cap: "Tableau 1"
+#| tbl-align: center
 #| cap-location: bottom
 knitr::kable(head(iris))
 ```

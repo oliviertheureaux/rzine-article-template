@@ -1,34 +1,43 @@
-\definecolor{rzine-blue}{HTML}{0C3762}
-\definecolor{title-blue}{HTML}{C4D6EE}
-\definecolor{title-grey}{HTML}{708090}
 
-
+\definecolor{rzine-blue}{HTML}{0C3762} % couleur de fond du bandeau
+\definecolor{title-blue}{HTML}{C4D6EE} % couleur du titre/ sous-titre
+\definecolor{title-grey}{HTML}{708090} % couleur du texte du cc-by
 
 \begin{tikzpicture}[remember picture,overlay]
+% dessine un rectangle de 5cm de haut
 \fill[rzine-blue]
   (current page.north west) -- (current page.north east) --
   ([yshift=-5cm]current page.north east|-current page.north east) --
   ([yshift=-5cm]current page.north west|-current page.north west) -- cycle;
+  
+% positionne un logo (image de 3cm de haut)
 \node[anchor=north west, xshift=.75cm,
-  yshift=-.75cm] at (current page.north west) {\includegraphics[height=3cm]{logo}};
+  yshift=-.75cm] at (current page.north west) {\includegraphics[height=3cm]{logo.png}};
 
+% bloc titre / sous-titre
 \node[font=\sffamily\bfseries\color{title-blue},anchor=west,
   xshift=4.25cm,yshift=-2.3cm] at (current page.north west)
   {\begin{minipage}{15cm}
-    \fontsize{22}{30}\selectfont
+  % le titre
+    \fontsize{22}{30}\selectfont % taille 22
     $title$
     \vspace{.18cm}
-    \\
-    \fontsize{13}{18}\selectfont
-    $subtitle$
+    \\ % force un saut de ligne
+    % le sous-titre
+    \fontsize{13}{18}\selectfont % taill 13
+    $if(subtitle)$$subtitle$$endif$
     \vspace{.5cm}
-    \\
-    \fontsize{10}{18}\color{title-grey}\selectfont {\includegraphics[height=0.35cm]{cc-by}} ISSN 2743-8791 - Rzine.fr - Revue de méthodes pour les SHS  
+    \\ % force un saut de ligne
+    % gère le CC-BY
+    \fontsize{10}{18}\color{title-grey}\selectfont {\includegraphics[height=0.35cm]{cc-by.png}} ISSN 2743-8791 - Rzine.fr - Revue de méthodes pour les SHS  
     
   \end{minipage}};
 \end{tikzpicture}
 
+% espace vertical sous le bandeau
 \vspace*{2.5cm}
+
+% gère le bloc auteurs
 \begin{center}
     $for(by-author)$
       $if(by-author.name.literal)$$by-author.name.literal$$endif$$if(it.orcid)$~\orcidlink{$it.orcid$}$endif$$if(it.attributes.corresponding)$\footnote{Corresponding author: $if(it.email)$\href{mailto:$it.email$}{$it.email$}$endif$}$endif$\quad
@@ -41,28 +50,26 @@
 
 Date de publication : $date$
 \bigskip
+
 $if(doi)$
-\\
+\par % insère un saut de ligne
 DOI : \href{https://doi.org/$doi$}{$doi$}
 $endif$
 \end{center}
 
 \medskip
 
-
-
-
-\noindent\textbf{Résumé}\par
+\textbf{Résumé}\par % texte en gras + retour à la ligne avec le \par
 $abstract$
 
+% traduction de KEYWORDS
+\textbf{Mots-clés}\par
+$for(keywords)$$it$$sep$, $endfor$ 
+ 
+\vfill % espace vertical automatique
 
-\noindent\textbf{Mots-clés}\par
-$for(keywords)$$it$$sep$, $endfor$ % traduction de KEYWORDS
-\vfill
-
-
+% pour le texte de fond : soumis, en relecture...
 $if(draft)$
-% \linenumbers
 \DraftwatermarkOptions{stamp=true, colorspec=0.9, text={\rm soumis}}
 $else$
 \DraftwatermarkOptions{stamp=false}
