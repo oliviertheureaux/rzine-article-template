@@ -29,10 +29,10 @@ h6{color:#4178BC;}
 
 /* Aligne horizontalement rzine-title-row et rzine-title-text  */
 .rzine-title-row {   /* fixe des règles sur l'élément HTML rzine-title-row définit dans le title-block.html */
-  display: flex;  /* aligne les éléments horizontalement (place les objets côte à côte) */
+  display: flex;     /* aligne les éléments horizontalement (place les objets côte à côte) */
   align-items: center;
-  gap: 1rem;    /* espace entre le logo et le texte (taille de police par défaut)) */
-  flex-wrap: wrap;  /* permet le passage à la ligne */
+  gap: 1rem;         /* espace entre le logo et le texte (taille de police par défaut)) */
+  flex-wrap: wrap;   /* permet le passage à la ligne */
 }
 
 .rzine-logo {
@@ -56,5 +56,5 @@ h6{color:#4178BC;}
 }
 
 figure figcaption {
-  text-align: center;
+  text-align: center; /* pour que la légende soit centrée
 }
