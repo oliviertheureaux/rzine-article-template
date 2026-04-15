@@ -61,8 +61,7 @@ Sur la version du logo @fig-logo-rzine, nous distinguons une pile de livres...
 
 ```{r, echo=T}
 #| tbl-cap: "Tableau 1"
-#| tbl-align: center
-#| cap-location: bottom
+#| tbl-cap-location: bottom
 knitr::kable(head(iris))
 ```
 
@@ -108,8 +107,8 @@ Vous pouvez également utiliser les lignes de commande suivantes dans le
 terminal de RStudio :
 
 ``` bash
-quarto render index.qmd --to rzine-html  # générer le HTML
-quarto render index.qmd --to rzine-pdf   # générer le PDF
+quarto render index.qmd --to article-html  # générer le HTML
+quarto render index.qmd --to article-pdf   # générer le PDF
 ```
 
 # Soumettre un article

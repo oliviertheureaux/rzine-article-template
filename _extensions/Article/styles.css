@@ -54,3 +54,7 @@ h6{color:#4178BC;}
   margin-top: 0.5rem;   /* ajoute un petit espace au-dessus du sous-titre pour le séparer du titre */
   margin-bottom: 0;
 }
+
+figure figcaption {
+  text-align: center; /* pour que la légende soit centrée
+}

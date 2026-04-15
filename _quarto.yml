@@ -1,10 +1,12 @@
 project:
   title: "rzine-template"
-  render: 
-    - index.qmd
-    
-lang: fr-FR 
-language: _language.yml
+
+lang: fr-FR  
+language: _language.yml # sert à modifier le nom de la partie "téléchargements"
+
+draft: true      # sur HTML : bandeau en haut ; sur PDF : “Brouillon” en biais (à modifier dans before-body.tex)
+published: false # utile car le bloc div est commenté dans title-metadata.html ?
+repo: "template" # à définir ? c'est aussi commenté dans title-metadata
 
 title: "Rzine mis en application avec R"
 subtitle: "Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R"
@@ -44,12 +46,8 @@ keywords:
   - géomatique
   - base de données
 
-
 abstract: |
      Modèle de mise en page Quarto pour la revue Rzine, qui permet de publier sur des méthodes de SHS, mises en application avec R. Plus d'informations sur [https://rzine.fr](https://rzine.fr).
-
-draft: true # sur HTML : bandeau ; sur PDF : “soumis” en biais
-published: false # utile ?
 
 doi: "10.xxxx/xxx-xxx"
 
@@ -58,17 +56,9 @@ other-links:
     icon: github
     href: "https://github.com/rzine-reviews/rzine-article-template"
 
-repo: "template"
-
-embed-resources: true
 format:
-  rzine-html: 
-    toc: true
-    toc-location: right
-    toc-expand: 2
-    format-links: true
-
-  rzine-pdf: default
+  Article-html: default
+  Article-pdf: default
 
 
 
