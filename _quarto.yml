@@ -52,9 +52,16 @@ abstract: |
 doi: "10.xxxx/xxx-xxx"
 
 other-links:
-  - text: Code source
+  - text: Dépôt de l'article
     icon: github
     href: "https://github.com/rzine-reviews/rzine-article-template"
+  - text: Issues sur Github
+    icon: bug
+    href: "https://github.com/rzine-reviews/rzine-article-template/issues"
+  - text: Publications sur Rzine.fr
+    icon: book
+    href: "https://www.rzine.fr/publications/"
+
 
 format:
   Article-html: default

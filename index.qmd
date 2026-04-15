@@ -54,7 +54,7 @@ article](https://rzine.fr/documentation/redaction/)
 knitr::include_graphics("figures/logo.png") # lien vers le fichier image
 ```
 
-Sur la version du logo @fig-logo-rzine, nous distinguons une pile de livres... 
+Sur la version du logo (@fig-logo-rzine), nous distinguons une pile de livres... 
 
 
 ### Insérer un tableau

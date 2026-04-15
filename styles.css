@@ -56,5 +56,38 @@ h6{color:#4178BC;}
 }
 
 figure figcaption {
-  text-align: center; /* pour que la légende soit centrée
+  text-align: center; /* pour que la légende soit centrée */
 }
+
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("fonts/LiberationSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("fonts/LiberationSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("fonts/LiberationSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("fonts/LiberationSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+}
+/* source : https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Text_styling/Web_fonts?utm_source=chatgpt.com*/ 
