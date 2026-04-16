@@ -72,15 +72,24 @@ $endif$
   $endif$
 </div>
 
-  $if(keywords)$
-  <div>
-    <div class="quarto-title-meta-heading">Mots-clés</div> <!-- traduction de KEYWORDS -->
-    <div class="quarto-title-meta-contents">
-      <p class="date">$for(keywords)$$keywords$$sep$, $endfor$</p>
-    </div>
+$if(keywords)$
+<div>
+  <div class="quarto-title-meta-heading">
+    $if(title-metadata-keywords-label)$
+      $title-metadata-keywords-label$
+    $else$
+      Keywords
+    $endif$
   </div>
-  $endif$
+  <div class="quarto-title-meta-contents">
+    <p class="keywords">$for(keywords)$$keywords$$sep$, $endfor$</p>
+  </div>
+</div>
+$endif$
 
+
+ 
+    <div>
 <!--  
     <div>
     <div class="quarto-title-meta-heading">Status</div>
@@ -98,6 +107,7 @@ $endif$
   </div>
   
 -->
+  
   
   
   

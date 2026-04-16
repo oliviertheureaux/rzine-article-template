@@ -3,6 +3,25 @@
 \usepackage{tabularx}
 \usepackage{orcidlink}
 \usepackage{lineno}
-\usepackage{libertinus}
-\usepackage{montserrat}
+% \usepackage{libertinus}
+% \usepackage{montserrat}
 \usepackage{draftwatermark}
+\usepackage{fontspec}
+
+\setmainfont{LiberationSans}[
+  Path = _extensions/Article/fonts/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic
+]
+
+\setsansfont{LiberationSans}[
+  Path = _extensions/Article/fonts/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic
+]

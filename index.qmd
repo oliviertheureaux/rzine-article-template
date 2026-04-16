@@ -146,6 +146,12 @@ N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
 sessionInfo()
 ```
 
+
+```{r session_info, echo=FALSE}
+kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[1]], row.names = F))
+kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[2]], row.names = F))
+```
+
 ## Références bibliographiques
 
 Une bibliographie est attendue (`references.bib`). Elle sert à
@@ -165,6 +171,7 @@ ajoutée en fin de document.
 
 ::: {.content-visible when-format="pdf"}
 **Réutilisation**
+<!-- **Reuse** -->
 
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 
@@ -174,19 +181,22 @@ BibTeX
 
 ```bibtex
 @article{rzine_article,
-  author = {Auteur 1},
-  title = "{{< meta title >}}",
+  author = { {{< meta author-bibtex >}} },
+  title = { {{< meta title >}} },
   journal = {Rzine},
-  year = {2026},
-  doi = "{{< meta doi >}}",
-  issn = "{{< meta citation.issn >}}",
+  date = { {{< meta date >}} },
+  doi = { {{< meta doi >}} },
+  issn = { {{< meta citation.issn >}} },
   langid = {fr-FR}
 }
 ```
-
-
 Veuillez citer ce travail comme suit :
+<!-- For attribution, please cite this work as: -->
 
-Auteur·rice 1, Auteur·rice 2 et Auteur·rice 3 (2026). *Rzine mis en
-application avec R*. *Rzine*. https://doi.org/10.xxxx/xxx-xxx \*\*\*
+{{< meta citation-text >}}
+
+
 :::
+
+
+

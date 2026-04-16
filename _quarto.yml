@@ -1,10 +1,15 @@
 project:
   title: "rzine-template"
 
-lang: fr-FR  
+# choisir en fonction de la langue : FR ou US
+lang: fr-FR
+title-metadata-keywords-label: "Mots-clés"
+# lang: en-US
+# title-metadata-keywords-label: "Keywords"
+
 language: _language.yml # sert à modifier le nom de la partie "téléchargements"
 
-draft: true      # sur HTML : bandeau en haut ; sur PDF : “Brouillon” en biais (à modifier dans before-body.tex)
+draft: true      # sur HTML : bandeau en haut ; sur PDF : “Draft” en biais (à modifier dans before-body.tex)
 published: false # utile car le bloc div est commenté dans title-metadata.html ?
 repo: "template" # à définir ? c'est aussi commenté dans title-metadata
 
@@ -27,11 +32,17 @@ author:
       - name: "Etablissement 2"
         url: "https://xxxxx.fr"
     orcid: 0000-0000-0000-0000
-  
+
   - name: "Auteur·rice 3"
     url: "https://rzine.fr"
     affiliations:
       - name: "Etablissement 3"
+        url: "https://xxxxx.fr"
+    orcid: 0000-0000-0000-0000
+  - name: "Auteur·rice 4"
+    url: "https://rzine.fr"
+    affiliations:
+      - name: "Etablissement 4"
         url: "https://xxxxx.fr"
     orcid: 0000-0000-0000-0000
     
@@ -51,14 +62,22 @@ abstract: |
 
 doi: "10.xxxx/xxx-xxx"
 
+# personnalisation de la barre de droite
+format-links: false
 other-links:
-  - text: Dépôt de l'article
+  - text: "PDF"
+    icon: file-pdf
+    href: index.pdf
+  - text: "Télécharger les données"
+    icon: database
+    href: "https://www.rzine.fr/publications/"
+  - text: Code source de l'article
     icon: github
     href: "https://github.com/rzine-reviews/rzine-article-template"
-  - text: Issues sur Github
+  - text: Relecture ouverte
     icon: bug
     href: "https://github.com/rzine-reviews/rzine-article-template/issues"
-  - text: Publications sur Rzine.fr
+  - text: Autres articles
     icon: book
     href: "https://www.rzine.fr/publications/"
 

@@ -5,7 +5,7 @@ quarto-required: ">=1.5.0"
 
 contributes:
   formats:
-  
+
     html:
       toc: true
       number-sections: true
@@ -24,7 +24,7 @@ contributes:
         # You can include here Lua filters defining shortcodes from your extension
         - shortcodes.lua
       
-      citation:
+      citation:  # génére les blocs en bas de page Bibtex et "veuillez citer..."
         type: article-journal
         container-title: Rzine
         issn: 2743-8791
@@ -67,6 +67,10 @@ contributes:
         - "fonts/LiberationSans-BoldItalic.ttf"
     
     pdf:
+      filters:
+        - author-bibtex.lua
+        - citation-text.lua
+      
       toc: true
       number-sections: true
       anchor-sections: true
@@ -78,7 +82,7 @@ contributes:
       license: "CC BY-SA"
       date-format: long
       syntax-highlighting: github 
-      
+        
       shortcodes:
         - shortcodes.lua
       
@@ -97,10 +101,11 @@ contributes:
       fontsize: 11pt
       linestretch: 1.08 # contrôle l'interligne
       
+      ## pour la font voir : include-in-header.tex
       # fontfamily: montserrat
       # monofont: montserrat
-      mainfont: "Liberation Sans"  # police principale
-      sansfont: "Liberation Sans"  # police sans-serif pour LaTex/Quarto
+      # mainfont: "Liberation Sans"  # police principale
+      # sansfont: "Liberation Sans"  # police sans-serif pour LaTex/Quarto
       monofont: "DejaVu Sans Mono" # police pour les chunks
       monofontoptions:
         - Scale=0.92  # réduit la taille des police des chunks
