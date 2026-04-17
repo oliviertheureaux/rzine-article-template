@@ -140,14 +140,7 @@ N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
 
 [^2]: <https://quarto.org/docs/authoring/markdown-basics.html#footnotes>
 
-## Informations de session
 
-***
-```{r session_info, echo=FALSE}
-si <- utils::capture.output(sessionInfo())
-cat("\n", paste(si, collapse = "\n"), "\n", sep = "")
-```
-***
 
 ## Références bibliographiques
 
@@ -165,6 +158,15 @@ ajoutée en fin de document.
 
 ::: {#refs}
 :::
+
+## Informations de session
+
+***
+```{r session_info mp, echo=FALSE}
+si <- utils::capture.output(sessionInfo())
+cat("\n", paste(si, collapse = "\n"), "\n", sep = "")
+```
+*** 
 
 ::: {.content-visible when-format="pdf"}
 **Réutilisation**
