@@ -143,14 +143,10 @@ N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
 ## Informations de session
 
 ```{r session_info, echo=FALSE}
-sessionInfo()
+si <- utils::capture.output(sessionInfo())
+cat("\n", paste(si, collapse = "\n"), "\n", sep = "")
 ```
 
-
-```{r session_info, echo=FALSE}
-kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[1]], row.names = F))
-kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[2]], row.names = F))
-```
 
 ## Références bibliographiques
 
