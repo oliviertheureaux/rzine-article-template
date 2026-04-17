@@ -142,11 +142,12 @@ N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
 
 ## Informations de session
 
+***
 ```{r session_info, echo=FALSE}
 si <- utils::capture.output(sessionInfo())
 cat("\n", paste(si, collapse = "\n"), "\n", sep = "")
 ```
-
+***
 
 ## Références bibliographiques
 
