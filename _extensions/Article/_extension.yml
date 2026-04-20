@@ -65,7 +65,7 @@ contributes:
         - "fonts/LiberationSans-Bold.ttf"
         - "fonts/LiberationSans-Italic.ttf"
         - "fonts/LiberationSans-BoldItalic.ttf"
-    
+
     pdf:
       filters:
         - author-bibtex.lua
