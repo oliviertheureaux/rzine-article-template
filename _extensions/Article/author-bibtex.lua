@@ -1,4 +1,9 @@
+
+-- filtre Lua qui lit la métadonnée author du YAML
+-- puis crée un nouvelle métadonnée author-bibtex
+
 function Meta(meta)
+  -- On récupère les auteurs
   local authors = meta.author
   if not authors then
     return meta
@@ -13,7 +18,7 @@ function Meta(meta)
       table.insert(names, pandoc.utils.stringify(a))
     end
   end
-
+  -- Création d'une nouvelle métadonnée au format BibTeX
   meta["author-bibtex"] = pandoc.MetaString(table.concat(names, " and\n "))
   return meta
 end
