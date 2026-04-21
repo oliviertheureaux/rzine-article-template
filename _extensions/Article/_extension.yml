@@ -65,7 +65,7 @@ contributes:
         - "fonts/LiberationSans-Bold.ttf"
         - "fonts/LiberationSans-Italic.ttf"
         - "fonts/LiberationSans-BoldItalic.ttf"
-    
+
     pdf:
       filters:
         - author-bibtex.lua
@@ -130,6 +130,20 @@ contributes:
       
       include-in-header:
         - "partials/pdf/include-in-header.tex"
+        
+        - text: | 
+            \usepackage{fvextra}
+            \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{ 
+              breaklines,
+              breaksymbolleft={},
+              breaksymbolright={},
+              commandchars=\\\{\}
+            }
+        # fvextra : package latex qui améliore l'affichage brute de verbatim
+        # highlighting c'est les chunks dans l'environnement Pandoc 
+        # verbatim : moteur d'affichage brute (aucune modif)
+        # commandchars : pour garder le style des chunks
+        # https://distrib-coffee.ipsl.jussieu.fr/pub/mirrors/ctan/macros/latex/contrib/fvextra/fvextra.pdf  (page 6)
         
       template-partials:
         - "partials/pdf/before-body.tex"

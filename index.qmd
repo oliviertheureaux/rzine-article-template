@@ -46,12 +46,26 @@ article](https://rzine.fr/documentation/redaction/)
 
 ### Inclure une image
 
-```{r, echo=T}
+
+``` bash
 #| label: fig-logo-rzine
 #| fig-cap: "Logo Rzine"
 #| fig-align: center
+#| tbl-cap-location: bottom
 #| out.width: 200px
-knitr::include_graphics("figures/logo.png") # lien vers le fichier image
+#| echo: true
+```
+
+```{r}
+#| label: fig-logo-rzine
+#| fig-cap: "Logo Rzine"
+#| fig-align: center
+#| tbl-cap-location: bottom
+#| out.width: 200px
+#| echo: true
+
+library(knitr)
+include_graphics("figures/logo.png") # lien vers le fichier image
 ```
 
 Sur la version du logo (@fig-logo-rzine), nous distinguons une pile de livres... 
@@ -59,12 +73,42 @@ Sur la version du logo (@fig-logo-rzine), nous distinguons une pile de livres...
 
 ### Insérer un tableau
 
-```{r, echo=T}
-#| tbl-cap: "Tableau 1"
+
+**Jeu de données IRIS** 
+
+``` bash
+#| label: tbl-iris
+#| tbl-cap: "Présentation du jeu de données IRIS"
 #| tbl-cap-location: bottom
-knitr::kable(head(iris))
+#| echo: true
 ```
 
+```{r}
+#| label: tbl-iris
+#| tbl-cap: "Présentation du jeu de données IRIS"
+#| tbl-cap-location: bottom
+#| echo: true
+library(knitr)
+kable(head(iris))
+```
+
+**Jeu de données CARS** 
+
+``` bash
+#| label: tbl-cars
+#| tbl-cap: "Présentation du jeu de données CARS"
+#| tbl-cap-location: bottom
+#| echo: true
+```
+
+```{r}
+#| label: tbl-cars
+#| tbl-cap: "Présentation du jeu de données CARS"
+#| tbl-cap-location: bottom
+#| echo: true
+library(knitr)
+kable(head(cars))
+```
 ### Options des blocs de code *chunks*
 
 Quelques exemples :
@@ -140,34 +184,36 @@ N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
 
 [^2]: <https://quarto.org/docs/authoring/markdown-basics.html#footnotes>
 
-## Informations de session
 
-```{r session_info, echo=FALSE}
-sessionInfo()
-```
-
-
-```{r session_info, echo=FALSE}
-kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[1]], row.names = F))
-kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[2]], row.names = F))
-```
 
 ## Références bibliographiques
 
-Une bibliographie est attendue (`references.bib`). Elle sert à
-positionner votre contribution dans le champ thématique et/ou
-disciplinaire.
+Une bibliographie écrite en BibTeX est attendue (voir le fichier `references.bib`). Elle sert à positionner votre contribution dans le champ thématique et/ou disciplinaire.
 
 Pour appeler une référence dans le corps du document, utilisez le
 symbole `@`. Par exemple : @CameronTrivedi2013
 
 La liste de références bibliographiques citées sera automatiquement
-ajoutée en fin de document.
+ajoutée en fin de document grâce à la syntaxe markdown suivante : 
 
-# Bibliographie {.unnumbered}
+``` bash
+::: {#refs}
+:::
+```
+
+**Exemple de rendu bibliographique:** 
 
 ::: {#refs}
 :::
+
+## Informations de session
+
+
+```{r session_info mp, echo=FALSE}
+si <- utils::capture.output(sessionInfo())
+cat("\n", paste(si, collapse = "\n"), "\n", sep = "")
+```
+
 
 ::: {.content-visible when-format="pdf"}
 **Réutilisation**
