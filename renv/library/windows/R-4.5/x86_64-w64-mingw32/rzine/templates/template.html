@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$
+
+    $if(date-meta)$
+    <meta name="date" content="$date-meta$" />
+    $endif$
+
+    <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+
+    $if(highlightjs)$
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet"
+	  href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css"
+	  $if(html5)$$else$type="text/css" $endif$/>
+    <script src="$highlightjs$/highlight.js"></script>
+    <script type="text/javascript">
+      if (window.hljs && document.readyState && document.readyState === "complete") {
+	  window.setTimeout(function() {
+	      hljs.initHighlighting();
+	  }, 0);
+      }
+    </script>
+    $endif$
+
+    $if(highlighting-css)$
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+      $highlighting-css$
+    </style>
+    $endif$
+
+    $for(css)$
+    <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+    $endfor$
+
+    <!-- tabsets -->
+    <script>
+      $$(document).ready(function () {
+	  window.buildTabsets("toc");
+      });
+      $$(document).ready(function () {
+	  $$('.tabset-dropdown > .nav-tabs > li').click(function () {
+	      $$(this).parent().toggleClass('nav-tabs-open')
+	  });
+      });
+    </script>
+
+    <!-- code folding -->
+    $if(code_menu)$
+    <script>
+      $$(document).ready(function () {
+      	  $if(source_embed)$
+      	  window.initializeSourceEmbed("$source_embed$");
+      	  $endif$
+      	  $if(code_folding)$
+      	  window.initializeCodeFolding("$code_folding$" === "show");
+      	  $endif$
+      });
+    </script>
+    $endif$
+
+    <!-- code download -->
+    $if(source_embed)$
+    <style>
+      #rmd-source-code {
+	         display: none;
+      }
+    </style>
+    $endif$
+
+    <!-- tabsets dropdown -->
+
+    <style type="text/css">
+      .tabset-dropdown > .nav-tabs {
+      	  display: inline-table;
+      	  max-height: 500px;
+      	  min-height: 44px;
+      	  overflow-y: auto;
+      	  background: white;
+      	  border: 1px solid #ddd;
+      	  border-radius: 4px;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active:before {
+      	  content: "";
+      	  font-family: 'Glyphicons Halflings';
+      	  display: inline-block;
+      	  padding: 10px;
+      	  border-right: 1px solid #ddd;
+      }
+
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+      	  content: "&#xe258;";
+      	  border: none;
+      }
+
+      .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+      	  content: "";
+      	  font-family: 'Glyphicons Halflings';
+      	  display: inline-block;
+      	  padding: 10px;
+      	  border-right: 1px solid #ddd;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active {
+      	  display: block;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active a {
+      	  padding: 0 15px !important;
+      }
+
+      .tabset-dropdown > .nav-tabs > li > a,
+      .tabset-dropdown > .nav-tabs > li > a:focus,
+      .tabset-dropdown > .nav-tabs > li > a:hover {
+      	  border: none;
+      	  display: inline-block;
+      	  border-radius: 4px;
+      	  background-color: transparent;
+      }
+
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+      	  display: block;
+      	  float: none;
+      }
+
+      .tabset-dropdown > .nav-tabs > li {
+    	  display: none;
+    	  margin-left: 0 !important;
+      }
+    </style>
+    
+</head>
+
+<body class="preload">
+
+
+   <div id="content" data-toggle="wy-nav-shift">
+     <nav id="nav-top" role="navigation" aria-label="top navigation">
+       <a role="button" href="#" data-toggle="wy-nav-top"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+     </nav>
+
+   $if(code_menu)$
+   <div class="btn-group pull-right">
+     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+     <ul class="dropdown-menu" style="min-width: 50px;">
+      	    $if(code_folding)$
+      	    <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+      	    <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+      	    $if(source_embed)$
+      	    <li role="separator" class="divider"></li>
+      	    $endif$
+      	    $endif$
+      	    $if(source_embed)$
+      	    <li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+      	    $endif$
+     </ul>
+   </div>
+   $endif$
+
+   $for(include-before)$
+   $include-before$
+   $endfor$
+
+   $if(title)$
+   <h1 class="title">$title$</h1>
+   $endif$
+   $if(subtitle)$
+   <h1 class="subtitle">$subtitle$</h1>
+   $endif$
+
+   $for(author)$
+   $if(author.name)$
+   <p id="author"> $author.name$
+   $if(author.affiliation)$
+    ($author.affiliation$)
+   </p>
+   $endif$
+   $endif$
+   $endfor$
+   
+   $if(image)$
+   <img src=$image$ alt="featured" width="800">
+   $endif$
+
+   <div id="sidebar">
+  
+   $if(logo)$
+   <div id="logo">
+     <a href="https://rzine.fr/" target="_blank">
+      <img src=$logo$ alt="featured" width="180">
+     </a>
+   </div>
+   $endif$
+   
+    <h2><a  id="titre_fiche" href="#content">$title$</a></h2>
+    <div id="toc">
+      $toc$
+    </div>
+    
+    <div id="postamble" data-toggle="wy-nav-shift" class="status">
+      
+      $for(author)$
+      $if(author.name)$
+      <p class="author"><span class="glyphicon glyphicon-user"></span> $author.name$</p>
+      $endif$
+      $endfor$
+      
+      $if(date)$
+      <p class="author"><span class="glyphicon glyphicon-calendar"></span> $date$</p>
+      $endif$
+      
+     $if(licence)$
+     <br />
+     <a href=https://creativecommons.org/licenses/$licence$/4.0 target="_blank"><img src=https://licensebuttons.net/l/$licence$/4.0/88x31.png alt="licensebuttons cc">
+     </a>
+     $endif$   
+      
+     
+<div id="git">
+        
+      $if(gitlab)$
+      <br />
+      <a href=https://$gitlab$ target="_blank"><img src=https://badgen.net/badge/Code%20source%20on%20/GitLab/blue?icon=gitlab alt="Code source on GitLab">
+      </a>
+      $endif$
+      
+      $if(github)$
+      <br />
+      <a href=https://github.com/$github$ target="_blank"><img src=https://badgen.net/badge/Code%20source%20on%20/GitHub/blue?icon=github alt="Code source on GitHub">
+      </a>
+      $endif$
+     
+      $if(doi)$
+      <br />
+      <a href=https://doi.org/$doi$ target="_blank"><img src="https://zenodo.org/badge/DOI/$doi$.svg" alt="DOI:$doi$">
+      </a>
+      $endif$
+
+</div>
+      
+    </div>
+  </div>
+
+<div id="main">
+$body$
+</div>
+
+  $for(include-after)$
+  $include-after$
+  $endfor$
+
+
+  $if(licence)$
+  <br />
+  <center><a href=https://creativecommons.org/licenses/$licence$/4.0 target="_blank"><img src=https://licensebuttons.net/l/$licence$/3.0/88x31.png alt="licensebuttons cc">
+  </a>
+  </center> 
+  $endif$ 
+  
+
+
+ <script>
+    $$(document).ready(function () {
+
+      	$if(readrzine)$
+      	$else$
+      	// add bootstrap table styles to pandoc tables
+      	$$('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+      	$endif$
+      
+       	$if(thumbnails)$
+       	$$('#content img').addClass("image-thumb");
+      	$endif$
+      
+      	$if(lightbox)$
+      	$$('#content img').addClass("image-lb");
+      	$$('#content').magnificPopup({
+      	    type:'image',
+      	    closeOnContentClick: false,
+      	    closeBtnInside: false,
+      	    delegate: '.image-lb',
+      	    gallery: {enabled: $gallery$ },
+      	    image: {
+      	        verticalFit: true,
+      		      titleSrc: 'alt'
+	          }
+       	});
+       	$endif$
+    });
+  </script>
+
+
+  $if(mathjax-url)$
+  <script>
+    (function () {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src  = "$mathjax-url$";
+	document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  $endif$
+
+  <br />
+
+</body>
+</html>
