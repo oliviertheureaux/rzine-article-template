@@ -1,22 +1,20 @@
 project:
   title: "rzine-template"
 
+title: "Rzine mis en application avec R"
+subtitle: "Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R"
+date: today
+# date-modified: last-modified
+
 # choisir en fonction de la langue : FR ou US
 lang: fr-FR
 title-metadata-keywords-label: "Mots-clés"
 # lang: en-US
 # title-metadata-keywords-label: "Keywords"
 
-language: _language.yml # sert à modifier le nom de la partie "téléchargements"
-
 draft: true      # sur HTML : bandeau en haut ; sur PDF : “Draft” en biais (à modifier dans before-body.tex)
 published: false # utile car le bloc div est commenté dans title-metadata.html ?
 repo: "template" # à définir ? c'est aussi commenté dans title-metadata
-
-title: "Rzine mis en application avec R"
-subtitle: "Articles méthodologiques mis en application avec R Articles méthodologiques mis en application avec R"
-date: today
-# date-modified: last-modified
 
 author:
   - name: "Auteur·rice 1"
@@ -70,7 +68,7 @@ other-links:
     href: index.pdf
   - text: "Télécharger les données"
     icon: database
-    href: "https://www.rzine.fr/publications/"
+    href: "https://www.rzine.fr/publications/data.zip"
   - text: Code source de l'article
     icon: github
     href: "https://github.com/rzine-reviews/rzine-article-template"
@@ -81,10 +79,11 @@ other-links:
     icon: book
     href: "https://www.rzine.fr/publications/"
 
-
 format:
   Article-html: default
   Article-pdf: default
+  
+# language: _language.yml # sert à modifier le nom de la partie "téléchargements"
 
 
 

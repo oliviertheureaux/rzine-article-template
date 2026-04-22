@@ -109,6 +109,7 @@ kable(head(iris))
 library(knitr)
 kable(head(cars))
 ```
+
 ### Options des blocs de code *chunks*
 
 Quelques exemples :
