@@ -3,10 +3,9 @@
 \usepackage{tabularx}
 \usepackage{orcidlink}
 \usepackage{lineno}
-% \usepackage{libertinus}
-% \usepackage{montserrat}
 \usepackage{draftwatermark}
 \usepackage{fontspec}
+\usepackage{fvextra}
 
 \setmainfont{LiberationSans}[
   Path = _extensions/Article/fonts/,
@@ -25,3 +24,11 @@
   ItalicFont = *-Italic,
   BoldItalicFont = *-BoldItalic
 ]
+
+% Amélioration de l'affichage des blocs de code générés par Pandoc
+\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
+  breaklines,
+  breaksymbolleft={},
+  breaksymbolright={},
+  commandchars=\\\{\}
+}

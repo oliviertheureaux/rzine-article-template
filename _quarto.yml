@@ -13,7 +13,7 @@ title-metadata-keywords-label: "Mots-clés"
 # title-metadata-keywords-label: "Keywords"
 
 draft: true      # sur HTML : bandeau en haut ; sur PDF : “Draft” en biais (à modifier dans before-body.tex)
-published: false # utile car le bloc div est commenté dans title-metadata.html ?
+published: false # utile car le bloc div est commenté dans le partials HTML :  title-metadata.html ?
 repo: "template" # à définir ? c'est aussi commenté dans title-metadata
 
 author:
@@ -61,7 +61,7 @@ abstract: |
 doi: "10.xxxx/xxx-xxx"
 
 # personnalisation de la barre de droite
-format-links: false
+
 other-links:
   - text: "PDF"
     icon: file-pdf

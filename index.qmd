@@ -1,15 +1,15 @@
 ---
 editor: 
   markdown: 
-    wrap: 72 # retour à la ligne dans le .qmd après 80 caractères
+    wrap: 80 # retour à la ligne dans index.qmd après 70 caractères
 ---
 
 \newpage
 
 # Normes éditoriales
 
-Les normes éditoriales des articles méthodologiques Rzines sont
-consultables [ici](https://rzine.fr/documentation/normes/).
+Les normes éditoriales des articles méthodologiques Rzines sont consultables
+[ici](https://rzine.fr/documentation/normes/).
 
 # Rédiger un article
 
@@ -31,11 +31,10 @@ Cela crée un répertoire sur votre machine contenant un fichier Quarto
 
 ## Métadonnées
 
-Il n'y a pas d'en-tête (YAML) dans le fichier source de l'article
-(`index.qmd`). Les métadonnées générales de l'article sont à complétées
-dans le fichier `_quarto.yml` situé à la racine du répertoire.
-Renseignez-y le titre, sous-titre, auteur, affiliations, résumé,
-mots-clés...
+Il n'y a pas d'en-tête (YAML) dans le fichier source de l'article (`index.qmd`).
+Les métadonnées générales de l'article sont à complétées dans le fichier
+`_quarto.yml` situé à la racine du répertoire. Renseignez-y le titre,
+sous-titre, auteur, affiliations, résumé, mots-clés...
 
 ## Documentation
 
@@ -45,7 +44,6 @@ article](https://rzine.fr/documentation/redaction/)
 ## Quelques rappels
 
 ### Inclure une image
-
 
 ``` bash
 #| label: fig-logo-rzine
@@ -68,13 +66,11 @@ library(knitr)
 include_graphics("figures/logo.png") # lien vers le fichier image
 ```
 
-Sur la version du logo (@fig-logo-rzine), nous distinguons une pile de livres... 
-
+Sur la version du logo (@fig-logo-rzine), nous distinguons une pile de livres...
 
 ### Insérer un tableau
 
-
-**Jeu de données IRIS** 
+**Jeu de données IRIS**
 
 ``` bash
 #| label: tbl-iris
@@ -92,7 +88,7 @@ library(knitr)
 kable(head(iris))
 ```
 
-**Jeu de données CARS** 
+**Jeu de données CARS**
 
 ``` bash
 #| label: tbl-cars
@@ -145,11 +141,11 @@ Quelques exemples :
 
 # Compiler l'article
 
-Dans l'IDE RStudio, cliquez sur le bouton **Render** ou utilisez le
-raccourci suivant : `Ctrl + Maj + K`
+Dans l'IDE RStudio, cliquez sur le bouton **Render** ou utilisez le raccourci
+suivant : `Ctrl + Maj + K`
 
-Vous pouvez également utiliser les lignes de commande suivantes dans le
-terminal de RStudio :
+Vous pouvez également utiliser les lignes de commande suivantes dans le terminal
+de RStudio :
 
 ``` bash
 quarto render index.qmd --to article-html  # générer le HTML
@@ -166,18 +162,18 @@ page](https://rzine.fr/documentation/soumission/).
 ## Données
 
 Tout·e lecteur·ice doit être en mesure de reproduire la démonstration de
-l’article sans contrainte de réutilisation. L’intégralité des données
-utilisées doit obligatoirement être :
+l’article sans contrainte de réutilisation. L’intégralité des données utilisées
+doit obligatoirement être :
 
--   Correctement présentées dans l’article
--   Libre d’utilisation et de diffusion
--   Mises à disposition des lecteur·rice·s, même si ces données sont
-    déjà en libre accès
--   Décrites par des métadonnées (`readme.txt`)
--   Respectueuses du règlement général sur la protection des données
+- Correctement présentées dans l’article
+- Libre d’utilisation et de diffusion
+- Mises à disposition des lecteur·rice·s, même si ces données sont déjà en libre
+  accès
+- Décrites par des métadonnées (`readme.txt`)
+- Respectueuses du règlement général sur la protection des données
 
-**Toutes les données utilisées dans l’article devront être stockées dans
-le répertoire `data/`.**
+**Toutes les données utilisées dans l’article devront être stockées dans le
+répertoire `data/`.**
 
 ## Note de bas de page
 
@@ -185,40 +181,37 @@ N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
 
 [^2]: <https://quarto.org/docs/authoring/markdown-basics.html#footnotes>
 
-
-
 ## Références bibliographiques
 
-Une bibliographie écrite en BibTeX est attendue (voir le fichier `references.bib`). Elle sert à positionner votre contribution dans le champ thématique et/ou disciplinaire.
+Une bibliographie écrite en BibTeX est attendue (voir le fichier
+`references.bib`). Elle sert à positionner votre contribution dans le champ
+thématique et/ou disciplinaire.
 
-Pour appeler une référence dans le corps du document, utilisez le
-symbole `@`. Par exemple : @CameronTrivedi2013
+Pour appeler une référence dans le corps du document, utilisez le symbole `@`.
+Par exemple : @CameronTrivedi2013
 
-La liste de références bibliographiques citées sera automatiquement
-ajoutée en fin de document grâce à la syntaxe markdown suivante : 
+La liste de références bibliographiques citées sera automatiquement ajoutée en
+fin de document grâce à la syntaxe markdown suivante :
 
 ``` bash
 ::: {#refs}
 :::
 ```
 
-**Exemple de rendu bibliographique:** 
+**Exemple de rendu bibliographique:**
 
 ::: {#refs}
 :::
 
 ## Informations de session
 
-
 ```{r session_info mp, echo=FALSE}
 si <- utils::capture.output(sessionInfo())
 cat("\n", paste(si, collapse = "\n"), "\n", sep = "")
 ```
 
-
 ::: {.content-visible when-format="pdf"}
-**Réutilisation**
-<!-- **Reuse** -->
+**Réutilisation** <!-- **Reuse** -->
 
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 
@@ -226,7 +219,7 @@ cat("\n", paste(si, collapse = "\n"), "\n", sep = "")
 
 BibTeX
 
-```bibtex
+``` bibtex
 @article{rzine_article,
   author = { {{< meta author-bibtex >}} },
   title = { {{< meta title >}} },
@@ -237,13 +230,9 @@ BibTeX
   langid = {fr-FR}
 }
 ```
+
 Veuillez citer ce travail comme suit :
 <!-- For attribution, please cite this work as: -->
 
-{{< meta citation-text >}}
-
-
+{{< meta citation-text >}} <!-- Cette ligne utilise le filtre Lua : citation-text.lua -->
 :::
-
-
-

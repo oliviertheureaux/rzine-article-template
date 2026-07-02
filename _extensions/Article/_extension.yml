@@ -7,22 +7,22 @@ contributes:
   formats:
 
     html:
-      toc: true
+      toc: true          
       number-sections: true
-      anchor-sections: true
+      anchor-sections: true # ajoute un petit symbole de lien à côté de chaque titre
       toc-title: Sommaire   # "table des matières" à la fin d'un document
-      code-copy: true
-      code-block-background: true
+      code-copy: true       # ajoute un bouton copier qui permet de copier les blocs de code
+      code-block-background: true  # couleur de fond pour les blocs de code
       bibliography: references.bib  
-      csl: universite-de-montreal-apa.csl
+      csl: universite-de-montreal-apa.csl  # style de la biblio, ici APA
       license: "CC BY-SA"
       date-format: long
       # highlight-style: github
       syntax-highlighting: github  # nouvelle syntaxe https://quarto.org/docs/output-formats/html-code.html?
       
-      shortcodes:
+      shortcodes: 
         # You can include here Lua filters defining shortcodes from your extension
-        - shortcodes.lua
+        - shortcodes.lua # aujourd'hui le filtre est vide
       
       citation:  # génére les blocs en bas de page Bibtex et "veuillez citer..."
         type: article-journal
@@ -33,43 +33,43 @@ contributes:
       title-block-banner-color: "#C4D6EE"
       toc-location: right
       toc-expand: 2
-      format-links: true
+      format-links: false
       tbl-cap-location: bottom
       cap-location: bottom
       template-partials:
           - "partials/html/title-block.html"
           - "partials/html/title-metadata.html"
-      reference-location: document    
-      hover-citations: true
-      hover-footnotes: true
+      reference-location: document # ou se place la biblio, ici à la fin du document
+      hover-citations: true  # infobulle contenant la référence bibliographique complète
+      hover-footnotes: true  # infobulle pour les notes de bas de page
       fig-format: svg
       code-summary: "Cacher/Montrer le code"
       code-fold: false
-      link-external-newwindow: true
+      link-external-newwindow: true # Tous les liens externes s'ouvrent dans un nouvel onglet du navigateur
       css: styles.css
-      embed-resources: true
+      embed-resources: true # Créer un fichier HTML autonome avec les CSS, les polices, le JS, etc.
       
-      crossref:
+      crossref:  # impose des libellés
         sec-prefix: Section
         eq-prefix: Equation
         fig-prefix: Figure
         tbl-prefix: Table
      
-      html-math-method: katex
+      html-math-method: katex # comment afficher les formules mathématiques dans le HTML
 
       format-resources:
         - "logo.png"
         - "cc-by.png"
         - "styles.css"
-        - "fonts/LiberationSans-Regular.ttf"     # pôlice open source qui copie l'Arial
+        - "fonts/LiberationSans-Regular.ttf"     # police open source qui copie l'Arial
         - "fonts/LiberationSans-Bold.ttf"
         - "fonts/LiberationSans-Italic.ttf"
         - "fonts/LiberationSans-BoldItalic.ttf"
 
     pdf:
-      filters:
-        - author-bibtex.lua
-        - citation-text.lua
+      filters:  # filtres Lua additionnels
+        - author-bibtex.lua # génére les informations pour le BibTeX des auteurs
+        - citation-text.lua # sert à fabriquer le texte du bloc "Veuillez citer ce travail comme suit :"
       
       toc: true
       number-sections: true
@@ -131,14 +131,14 @@ contributes:
       include-in-header:
         - "partials/pdf/include-in-header.tex"
         
-        - text: | 
-            \usepackage{fvextra}
-            \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{ 
-              breaklines,
-              breaksymbolleft={},
-              breaksymbolright={},
-              commandchars=\\\{\}
-            }
+        # - text: | 
+        #     \usepackage{fvextra}
+        #     \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{ 
+        #       breaklines,
+        #       breaksymbolleft={},
+        #       breaksymbolright={},
+        #       commandchars=\\\{\}
+        #     }
         # fvextra : package latex qui améliore l'affichage brute de verbatim
         # highlighting c'est les chunks dans l'environnement Pandoc 
         # verbatim : moteur d'affichage brute (aucune modif)
