@@ -8,7 +8,7 @@ date: today
 
 # choisir en fonction de la langue : FR ou US
 lang: fr-FR
-title-metadata-keywords-label: "Mots-clés"
+title-metadata-keywords-label: "Mots-clés" # permet de changer l'intitulé dans le header
 # lang: en-US
 # title-metadata-keywords-label: "Keywords"
 
