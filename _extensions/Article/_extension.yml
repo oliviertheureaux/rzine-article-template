@@ -128,24 +128,10 @@ contributes:
       lot: true # liste des tables
       lot-title: "Liste des tableaux"
       
-      include-in-header:
+      include-in-header: # permet d'ajouter des packages LaTeX
         - "partials/pdf/include-in-header.tex"
         
-        # - text: | 
-        #     \usepackage{fvextra}
-        #     \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{ 
-        #       breaklines,
-        #       breaksymbolleft={},
-        #       breaksymbolright={},
-        #       commandchars=\\\{\}
-        #     }
-        # fvextra : package latex qui améliore l'affichage brute de verbatim
-        # highlighting c'est les chunks dans l'environnement Pandoc 
-        # verbatim : moteur d'affichage brute (aucune modif)
-        # commandchars : pour garder le style des chunks
-        # https://distrib-coffee.ipsl.jussieu.fr/pub/mirrors/ctan/macros/latex/contrib/fvextra/fvextra.pdf  (page 6)
-        
-      template-partials:
+      template-partials: # construit la première page du document à partir des métadonnées du YAML
         - "partials/pdf/before-body.tex"
 
       format-resources:

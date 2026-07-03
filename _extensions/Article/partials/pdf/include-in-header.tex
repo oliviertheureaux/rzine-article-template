@@ -5,7 +5,7 @@
 \usepackage{lineno}
 \usepackage{draftwatermark}
 \usepackage{fontspec}
-\usepackage{fvextra}
+\usepackage{fvextra} % fvextra : package latex qui améliore l'affichage brute de verbatim
 
 \setmainfont{LiberationSans}[
   Path = _extensions/Article/fonts/,
@@ -26,9 +26,10 @@
 ]
 
 % Amélioration de l'affichage des blocs de code générés par Pandoc
-\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
-  breaklines,
+\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{ %highlighting c'est les chunks dans l'environnement Pandoc et verbatim : moteur d'affichage brute (aucune modif)
+  breaklines,  % permet un retour à la ligne dans les chunks
   breaksymbolleft={},
   breaksymbolright={},
-  commandchars=\\\{\}
+  commandchars=\\\{\} % commandchars : pour garder le style des chunks
 }
+% Source : https://distrib-coffee.ipsl.jussieu.fr/pub/mirrors/ctan/macros/latex/contrib/fvextra/fvextra.pdf  (page 6)
