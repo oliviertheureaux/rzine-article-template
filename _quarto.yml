@@ -80,8 +80,8 @@ other-links:
     href: "https://www.rzine.fr/publications/"
 
 format:
-  Article-html: default
-  Article-pdf: default
+  Rzine-html: default
+  Rzine-pdf: default
   
 # language: _language.yml # sert à modifier le nom de la partie "téléchargements"
 
